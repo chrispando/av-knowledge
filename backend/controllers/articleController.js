@@ -1,47 +1,53 @@
 import asyncHandler from "../middleware/asyncHandler.js";
-import Article from "../models/articleModel.js";
-import generateToken from "../utils/generateToken.js";
+import { db } from "../server.js";
 
-// @desc    Get articles
+// @desc    Get all articles
 // @route   GET /api/articles/
 // @access  Public
 const getArticles = asyncHandler(async (req, res) => {
-  const articles = await Article.find({});
+  const snapshot = await db.collection("articles").get();
+  const articles = snapshot.docs.map((doc) => ({
+    id: doc.id,
+    ...doc.data(),
+  }));
 
   res.json(articles);
 });
 
-// @desc    Get article by ID
+// @desc    Get single article by ID
 // @route   GET /api/articles/:id
 // @access  Public
 const getArticle = asyncHandler(async (req, res) => {
-  const article = await Article.findById(req.params.id);
+  const docRef = db.collection("articles").doc(req.params.id);
+  const doc = await docRef.get();
 
-  if (article) {
-    res.json(article);
-  } else {
+  if (!doc.exists) {
     res.status(404);
     throw new Error("Article not found");
   }
+
+  res.json({ id: doc.id, ...doc.data() });
 });
 
-// @desc    Post article
+// @desc    Post new article
 // @route   POST /api/articles/
 // @access  Private
-
 const postArticle = asyncHandler(async (req, res) => {
   const { date, title, issue, steps_to_resolve, imgPath, author } = req.body;
-  const article = new Article({
+
+  const data = {
     date,
     title,
     issue,
     steps_to_resolve,
     imgPath,
     author,
-  });
+    createdAt: new Date().toISOString(),
+  };
 
-  const createdArticle = await article.save();
-  res.status(201).json(createdArticle);
+  const docRef = await db.collection("articles").add(data);
+
+  res.status(201).json({ id: docRef.id, ...data });
 });
 
 export { getArticles, getArticle, postArticle };
