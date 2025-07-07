@@ -1,0 +1,135 @@
+.articles-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 40vh;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px #d1caa1;
+}
+
+.articles-heading {
+  color: white;
+  font-size: 4em;
+  margin-bottom: 20px;
+}
+
+.caret {
+  color: turquoise;
+}
+
+.page-number {
+  color: turquoise;
+  font-size: 1.2em; /* Slightly smaller for smaller screens */
+  margin: 10px 0;
+  font-weight: bold; /* Make the page number bold */
+  padding: 5px 10px; /* Add some padding */
+  border-radius: 5px; /* Rounded corners */
+  background-color: rgba(0, 0, 0, 0.1); /* Light background for contrast */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.page-number:hover {
+  background-color: rgba(0, 0, 0, 0.2); /* Darker background on hover */
+}
+
+.pagination-button {
+  width: 140px;
+  padding: 12px 20px; /* Increase padding for bigger button */
+  margin: 0 10px; /* Increase margin for more spacing */
+  background: none;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 32px; /* Increase font size for bigger button */
+}
+
+.pagination-button:hover {
+  background: #f0f0f0;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+/* Media Queries for Smaller Screens */
+@media screen and (max-width: 768px) {
+  .articles-heading {
+    font-size: 1.5em; /* Reduce heading size */
+  }
+
+  .search-container {
+    max-width: 100%; /* Full width */
+  }
+
+  .search-input {
+    font-size: 14px; /* Adjust font size */
+    padding: 8px;
+    height: 35px;
+  }
+
+  .search-button {
+    font-size: 18px;
+    height: 35px;
+    width: 35px;
+  }
+
+  .search-container.active .search-input {
+    width: 150px; /* Reduce expanded width */
+  }
+
+  .search-container.active .search-button {
+    transform: translateX(148px);
+  }
+
+  .pagination-button {
+    font-size: 12px; /* Smaller font for pagination */
+    padding: 6px 10px;
+  }
+
+  .page-number {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .articles-page {
+    padding: 10px; /* Reduce padding */
+  }
+
+  .articles-heading {
+  }
+
+  .search-input {
+    width: 35px; /* Default collapsed width */
+    font-size: 12px;
+    padding: 8px;
+    height: 35px;
+    transition: width 0.3s ease;
+  }
+
+  .search-container.active .search-input {
+  }
+
+  .search-button {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  .search-container.active .search-button {
+  }
+
+  .pagination-button {
+    padding: 5px 8px;
+    font-size: 10px; /* Compact font size */
+    width: 40px;
+  }
+}

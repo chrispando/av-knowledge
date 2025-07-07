@@ -1,0 +1,49 @@
+.article-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.article-heading {
+  color: #fff;
+  text-decoration: underline;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.article-container p {
+  text-align: left;
+  width: 100%;
+  margin: 10px 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.article-step {
+  color: #fff;
+  text-align: left;
+  width: 100%;
+  margin: 10px 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.article-container p::before {
+  content: "•";
+  margin-right: 10px;
+  color: yellow;
+}
+
+.article-image {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+  height: auto;
+}

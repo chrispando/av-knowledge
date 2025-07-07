@@ -1,0 +1,41 @@
+[
+  {
+    "_id": "64af1a19fdb9a01c9c58a631",
+    "displayName": "John Doe",
+    "profilePicUrl": "john.jpg",
+    "email": "johndoe@example.com",
+    "password": "12345",
+    "isAdmin": false,
+    "createdProfileDate": "2025-01-18T10:00:00.000Z",
+    "timestamps": {
+      "createdAt": "2025-01-18T10:00:00.000Z",
+      "updatedAt": "2025-01-18T10:00:00.000Z"
+    }
+  },
+  {
+    "_id": "64af1a19fdb9a01c9c58a632",
+    "displayName": "Jane Smith",
+    "profilePicUrl": "jane.jpg",
+    "email": "janesmith@example.com",
+    "password": "12345",
+    "isAdmin": true,
+    "createdProfileDate": "2025-01-18T11:00:00.000Z",
+    "timestamps": {
+      "createdAt": "2025-01-18T11:00:00.000Z",
+      "updatedAt": "2025-01-18T11:00:00.000Z"
+    }
+  },
+  {
+    "_id": "64af1a19fdb9a01c9c58a633",
+    "displayName": "Alice Johnson",
+    "profilePicUrl": null,
+    "email": "alicejohnson@example.com",
+    "password": "12345",
+    "isAdmin": false,
+    "createdProfileDate": "2025-01-18T12:00:00.000Z",
+    "timestamps": {
+      "createdAt": "2025-01-18T12:00:00.000Z",
+      "updatedAt": "2025-01-18T12:00:00.000Z"
+    }
+  }
+]

@@ -1,0 +1,22 @@
+.account-created-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 40vh;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px #d1caa1;
+}
+
+.account-created-heading {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: whitesmoke;
+}
+
+.account-created-text {
+  font-size: 1.1rem;
+  color: whitesmoke;
+}
