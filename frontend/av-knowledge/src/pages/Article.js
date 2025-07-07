@@ -10,7 +10,7 @@ const Article = () => {
   useEffect(() => {
     axios
       .get(
-        `https://stark-ridge-88768-8900bd98165c.herokuapp.com/api/articles/${id}`
+        `<Articles endpoint>/${id}`
       )
       .then((res) => {
         setArticleInfo(res.data); // Set the article info
