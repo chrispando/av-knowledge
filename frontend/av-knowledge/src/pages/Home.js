@@ -12,7 +12,7 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get("https://stark-ridge-88768-8900bd98165c.herokuapp.com/api/articles")
+      .get("<BASE_URL>")
       .then((res) => {
         setArticles(res.data); // Set articles from the API
       })
